@@ -12,7 +12,13 @@ import issueRoutes from './routes/issueRoute.js';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin:[],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 app.use(express.json());
 app.use(cookieParser());
 const PORT = process.env.PORT || 6001;
