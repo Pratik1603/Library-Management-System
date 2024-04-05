@@ -1,0 +1,17 @@
+.border-gradient {
+  background: linear-gradient(to right, #ff0000, #00ff00);
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  /* Optional, to match the border-radius of the main element */
+}
+.overflow-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-hidden {
+  scrollbar-width: none;
+}
