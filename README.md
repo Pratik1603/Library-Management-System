@@ -18,13 +18,8 @@ Welcome to the Library Management System! This project is a full-stack web appli
 - <b>Authentication</b>: JWT (JSON Web Tokens)
 
 
-## Installation
 
-Follow these steps to run the project locally:
 
-1. <b>Clone the repository</b>:
-   ```bash
-   git clone https://github.com/your-username/library-management-system.git
 
 ## Screenshots
 You can view screenshots of the application <a href="https://drive.google.com/drive/folders/1VcUYfG1jBFYRLsTQeJROlEEUyJMGZZm4?usp=sharing">here</a>.
