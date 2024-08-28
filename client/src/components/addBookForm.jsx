@@ -41,19 +41,20 @@ const AddBookForm = ({ open, setOpen }) => {
         price: '',
         totalCopies: '',
         
-        
     });
-
+   
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
     };
+
     const {books,loading,error:errorMessage}=useSelector((state) => state.book);
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-       
         try {
             dispatch(updateStart());
             const res = await fetch('/api/book/create', {
@@ -65,12 +66,12 @@ const AddBookForm = ({ open, setOpen }) => {
             })
             const data = await res.json();
             if (!res.ok) {
-                
                 dispatch(updateFailure(data.message));
                 return;
             }
 
             if (res.ok) {
+        
                 const updatedBooks = [...books, data];
                 dispatch(updateSuccess(updatedBooks));
                
@@ -79,8 +80,6 @@ const AddBookForm = ({ open, setOpen }) => {
             dispatch(updateFailure('Something went wrong'));
            
         }
-        // Add your form submission logic here
-        
         setOpen(false);
     };
 

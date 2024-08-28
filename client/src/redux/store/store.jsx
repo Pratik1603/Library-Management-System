@@ -6,6 +6,7 @@ import issueReducer from '../issue/issueSlice.jsx';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+
 const rootReducer = combineReducers({
   user: userReducer,
   book: bookReducer,
@@ -13,7 +14,7 @@ const rootReducer = combineReducers({
 });
 
 const persistConfig = {
-  key: 'root',
+  key:'root',
   storage,
   version: 1,
 };

@@ -62,17 +62,14 @@ export const signin = async (req, res, next) => {
       { id: validUser._id, isOwner: validUser.isOwner },
       process.env.JWT_SECRET
     );
-
+   
     const { password: pass, ...rest } = validUser._doc;
 
     res
       .status(200)
       .cookie('access_token', token, {
         httpOnly: true,
-        // domain: 'localhost',
-        // path: '/',
-        // secure: false, // Change to true if using HTTPS
-        // sameSite: 'strict' // Adjust as needed for your requirements
+        
       })
       .json(rest);
   } catch (error) {

@@ -36,6 +36,7 @@ const BookPage = () => {
     const [amount,setAmount]=useState(0);
     const handleCreateIssue = async (bookId, libId,amnt) => {
         try {
+            
             const res = await fetch(`/api/issue/create`, {
                 method: 'POST',
                 headers: {

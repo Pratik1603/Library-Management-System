@@ -78,6 +78,7 @@ export const deleteBook=async(req,res,next)=>{
     if(req.user.id!=req.params.librarianId){
       return res.status(404).json({ message: 'You are not allowed to approve'});
     }
+    
     const patron = await User.findById(patronId);
 
     if (!patron) {
