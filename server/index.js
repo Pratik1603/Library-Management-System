@@ -9,10 +9,11 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import commentRoutes from './routes/comment.js';
 import issueRoutes from './routes/issueRoute.js';
-import path from "path";
-
-dotenv.config();
-const _dirname=path.resolve();
+import { fileURLToPath } from 'url';
+import path from 'path';
+// Convert `import.meta.url` to a path
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors(
     {
