@@ -14,7 +14,11 @@ import path from 'path';
 // Convert `import.meta.url` to a path
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Remove the last segment from __dirname
+const parentDir = path.dirname(__dirname);
 const app = express();
+console.log(parentDir);
 app.use(cors(
     {
         origin:[],
@@ -42,9 +46,9 @@ app.use('/api/book', bookRoutes);
 app.use('/api/comment', commentRoutes);
 app.use('/api/issue',issueRoutes);
 
-app.use(express.static(path.join(__dirname,'client/dist')));
+app.use(express.static(path.join(parentDir,'client/dist')));
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'client','dist','index.html'));
+    res.sendFile(path.join(parentDir,'client','dist','index.html'));
 })
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
