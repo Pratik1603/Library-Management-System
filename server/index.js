@@ -36,9 +36,6 @@ mongoose.connect("mongodb+srv://pratikgupta1603:Pratik%402003@cluster0.dpwlcw0.m
 })
 .catch((error) => console.log(`${error} did not connect`));
 
-app.get('/', (req, res) => {
-    res.send('Server is Running! 🚀');
-});
 
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
