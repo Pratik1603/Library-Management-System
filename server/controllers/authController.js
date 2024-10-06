@@ -35,7 +35,8 @@ export const signup = async (req, res, next) => {
   try {
     await newUser.save();
     res.json('Signup successful');
-  } catch (error) {
+  } 
+  catch (error) {
     next(error);
   }
 };
@@ -94,10 +95,6 @@ export const google = async (req, res, next) => {
         .status(200)
         .cookie('access_token', token, {
           httpOnly: false,
-          
-          // path: '/',
-          // secure: false, // Change to true if using HTTPS
-          // sameSite: 'strict' // Adjust as needed for your requirements
         })
         .json(rest);
         

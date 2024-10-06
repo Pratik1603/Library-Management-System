@@ -1,6 +1,6 @@
 import { errorHandler } from '../utils/error.js';
 import Issue from '../models/issue.js';
-// import {} from '../models/issue.js';
+
 import Book from '../models/book.js';
 import User from '../models/user.js';
 export const create = async (req, res, next) => {

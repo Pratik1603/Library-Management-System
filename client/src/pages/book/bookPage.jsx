@@ -19,6 +19,8 @@ import {
     bookFetchFailure,
 } from '../../redux/book/bookSlice.jsx';
 import Card from "../../components/Card.jsx";
+
+
 const BookPage = () => {
     const [rating, setRating] = useState(0); // State to hold the selected rating
     const navigate = useNavigate();
