@@ -9,11 +9,12 @@ import cookieParser from 'cookie-parser';
 import commentRoutes from './routes/comment.js';
 import issueRoutes from './routes/issueRoute.js';
 import { fileURLToPath } from 'url';
-// import path from 'path';
+import path from 'path';
+
 dotenv.config();
 const app=express();
 // Convert `import.meta.url` to a path
-// const __dirname=path.resolve();
+const __dirname=path.resolve();
 
 const corsOptions = {
     origin: function (origin, callback) {
@@ -43,13 +44,13 @@ app.use('/api/book', bookRoutes);
 app.use('/api/comment', commentRoutes);
 app.use('/api/issue',issueRoutes);
 
-app.get('/',(req,res)=>{
-    res.send("Server is running");
-})
-// app.use(express.static(path.join(__dirname,'client/dist')));
-// app.get('*',(req,res)=>{
-//     res.sendFile(path.join(__dirname,'client','dist','index.html'));
+// app.get('/',(req,res)=>{
+//     res.send("Server is running");
 // })
+app.use(express.static(path.join(__dirname,'client/dist')));
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'client','dist','index.html'));
+})
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
     const message = err.message || 'Internal Server Error';
