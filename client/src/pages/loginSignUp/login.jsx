@@ -36,7 +36,7 @@ function LoginSignup() {
     try {
      
       dispatch(signInStart());
-      const res = await fetch('/api/auth/signin', {
+      const res = await fetch('https://library-management-system-rho-bice.vercel.app/api/auth/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -65,7 +65,7 @@ function LoginSignup() {
     try {
       setLoading(true);
       setErrorMessage(null);
-      const res = await fetch('/api/auth/signup', {
+      const res = await fetch('https://library-management-system-rho-bice.vercel.app/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
